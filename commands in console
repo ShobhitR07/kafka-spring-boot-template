@@ -1,0 +1,17 @@
+Zookeeper console
+cd ~/Desktop
+Ls
+cd kafka_2.13-3.8.0
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Kafka server
+ bin/kafka-server-start.sh config/server.properties
+
+Create topic 
+ bin/kafka-topics.sh --create --topic user-topic --bootstrap-server localhost:9092
+
+Produce topic
+bin/kafka-console-producer.sh --topic user-topic --bootstrap-server localhost:9092
+
+Consume topic
+bin/kafka-console-consumer.sh --topic user-topic --from-beginning --bootstrap-server localhost:9092
